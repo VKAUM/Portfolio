@@ -8,7 +8,7 @@ export default function Projects() {
       title: "SAGA - AI Interviewer",
       description:
         "Forecasts gold prices using historical market data with machine learning.",
-      tech: ["Python", "ML", "Pandas"],
+      tech: ["Python", "ML", "Pandas", "OpenCV", "Flask", "MongoDB"],
       link: "https://github.com/VKAUM/SAGA",
     },
     {
@@ -29,28 +29,28 @@ export default function Projects() {
       title: "Expense Tracker",
       description:
         "Smart assistant chatbot using Python and NLP with voice interaction.",
-      tech: ["Python", "SpeechRecognition", "NLP"],
+      tech: ["Java", "Swing", "MySQL"],
       link: "https://github.com/VKAUM/Expense-Tracker",
     },
         {
       title: "Nth Follower Application",
       description:
         "Smart assistant chatbot using Python and NLP with voice interaction.",
-      tech: ["Python", "SpeechRecognition", "NLP"],
+      tech: ["Java"],
       link: "https://github.com/VKAUM/Nth-Follower-Application",
     },
         {
       title: "Fitness Tracker",
       description:
         "Smart assistant chatbot using Python and NLP with voice interaction.",
-      tech: ["Python", "SpeechRecognition", "NLP"],
+      tech: ["Python", "AIML", "Docker", "Neural Networks", "React"],
       link: "https://github.com/VKAUM/FitnessTracker",
     },
         {
       title: "Portfolio Website",
       description:
         "Smart assistant chatbot using Python and NLP with voice interaction.",
-      tech: ["Python", "SpeechRecognition", "NLP"],
+      tech: ["NextJS", "Tailwind", "React"],
       link: "https://github.com/VKAUM/Portfolio",
     },
   ];
