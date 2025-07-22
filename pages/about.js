@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { Code, Dumbbell, Sparkles } from "lucide-react";
 
 export default function About() {
@@ -9,7 +7,6 @@ export default function About() {
       <Head>
         <title>About</title>
       </Head>
-      <Navbar />
       <main className="min-h-screen px-8 py-20 bg-white">
         <h2 className="text-4xl font-bold mb-10">Spectrum of My Personality</h2>
         <p className="text-lg text-gray-700 max-w-3xl mb-12">
@@ -46,7 +43,6 @@ export default function About() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

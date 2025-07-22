@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 export default function Contact() {
   return (
     <>
-      <Navbar />
+      
       <main className="min-h-screen p-8">
         <h1 className="text-4xl font-bold mb-4">Contact</h1>
         <p className="text-lg text-gray-700">
@@ -17,7 +17,6 @@ export default function Contact() {
           🔗 <a href="https://linkedin.com/in/yourprofile" target="_blank" className="text-blue-600 underline">LinkedIn</a>
         </p>
       </main>
-      <Footer />
     </>
   );
 }

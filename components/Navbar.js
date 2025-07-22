@@ -1,8 +1,8 @@
-'use client'; // if you're using App Router
+'use client'; 
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // Optional: use any icon lib
+import { Menu, X } from "lucide-react"; 
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,12 +16,12 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <Link href="/about" className="hover:underline">About</Link>
-          <Link href="/experience" className="hover:underline">Experience</Link>
-          <Link href="/skills" className="hover:underline">Skills</Link>
-          <Link href="/projects" className="hover:underline">Projects</Link>
+          <Link href="/#about" className="hover:underline">About</Link>
+          <Link href="/#experience" className="hover:underline">Experience</Link>
+          <Link href="/#skills" className="hover:underline">Skills</Link>
+          <Link href="/#projects" className="hover:underline">Projects</Link>
           <Link href="/resume" className="hover:underline">Resume</Link>
-          <Link href="/contact" className="hover:underline">Contact</Link>
+          <Link href="/#contact" className="hover:underline">Contact</Link>
         </div>
 
         {/* Hamburger Menu Button */}
@@ -36,12 +36,12 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col space-y-3 bg-white text-gray-700 font-medium">
-          <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link href="/experience" onClick={() => setMenuOpen(false)}>Experience</Link>
-          <Link href="/skills" onClick={() => setMenuOpen(false)}>Skills</Link>
-          <Link href="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+          <Link href="/#about" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link href="/#experience" onClick={() => setMenuOpen(false)}>Experience</Link>
+          <Link href="/#skills" onClick={() => setMenuOpen(false)}>Skills</Link>
+          <Link href="/#projects" onClick={() => setMenuOpen(false)}>Projects</Link>
           <Link href="/resume" onClick={() => setMenuOpen(false)}>Resume</Link>
-          <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       )}
     </nav>

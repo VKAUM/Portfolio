@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import ProjectCard from "../components/ProjectCard";
 
 export default function Projects() {
@@ -32,21 +30,21 @@ export default function Projects() {
       tech: ["Java", "Swing", "MySQL"],
       link: "https://github.com/VKAUM/Expense-Tracker",
     },
-        {
+    {
       title: "Nth Follower Application",
       description:
         "The Nth Follower Application is a Python-based tool designed to find the 'Nth' follower of a given public Instagram profile. This command-line application provides a simple and effective way to identify a specific follower in a user's follower list without having to manually scroll through potentially thousands of accounts. The project leverages web scraping techniques to access and parse Instagram's data, offering a practical solution for a unique social media query.",
       tech: ["Java"],
       link: "https://github.com/VKAUM/Nth-Follower-Application",
     },
-        {
+    {
       title: "Fitness Tracker",
       description:
         "Smart assistant chatbot using Python and NLP with voice interaction.",
       tech: ["Python", "AIML", "Docker", "Neural Networks", "React"],
       link: "https://github.com/VKAUM/FitnessTracker",
     },
-        {
+    {
       title: "Portfolio Website",
       description:
         "Smart assistant chatbot using Python and NLP with voice interaction.",
@@ -56,17 +54,13 @@ export default function Projects() {
   ];
 
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen px-8 py-20 bg-white">
-        <h1 className="text-4xl font-bold mb-10">Projects</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, i) => (
-            <ProjectCard key={i} {...project} />
-          ))}
-        </div>
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen px-8 py-20 bg-white">
+      <h1 className="text-4xl font-bold mb-10">Projects</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project, i) => (
+          <ProjectCard key={i} {...project} />
+        ))}
+      </div>
+    </main>
   );
 }
