@@ -16,7 +16,7 @@ export default function HeroSection() {
         I build full-stack applications with a focus on design, accessibility, and performance.
       </p>
       
-      <Link href="/projects">
+      <Link href="/#projects">
         <button className="mt-6 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">
           View My Work
         </button>

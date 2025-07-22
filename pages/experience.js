@@ -2,7 +2,7 @@ import { Award } from "lucide-react"; // Use Award icon in place of Certificate
 
 export default function Experience() {
   return (
-    <main className="min-h-screen p-8 bg-white">
+    <main className="min-h-screen p-8 bg-white pt-20">
       <h1 className="text-4xl font-bold mb-8">Experience</h1>
 
       {/* MSPL Baldota Group */}

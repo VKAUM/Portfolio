@@ -20,7 +20,7 @@ export default function Navbar() {
           <Link href="/#experience" className="hover:underline">Experience</Link>
           <Link href="/#skills" className="hover:underline">Skills</Link>
           <Link href="/#projects" className="hover:underline">Projects</Link>
-          <Link href="/resume" className="hover:underline">Resume</Link>
+          <Link href="/#resume" className="hover:underline">Resume</Link>
           <Link href="/#contact" className="hover:underline">Contact</Link>
         </div>
 
@@ -40,7 +40,7 @@ export default function Navbar() {
           <Link href="/#experience" onClick={() => setMenuOpen(false)}>Experience</Link>
           <Link href="/#skills" onClick={() => setMenuOpen(false)}>Skills</Link>
           <Link href="/#projects" onClick={() => setMenuOpen(false)}>Projects</Link>
-          <Link href="/resume" onClick={() => setMenuOpen(false)}>Resume</Link>
+          <Link href="/#resume" onClick={() => setMenuOpen(false)}>Resume</Link>
           <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       )}

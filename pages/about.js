@@ -7,7 +7,7 @@ export default function About() {
       <Head>
         <title>About</title>
       </Head>
-      <main className="min-h-screen px-8 py-20 bg-white">
+      <main className="min-h-screen px-8 py-20 bg-white pt-20">
         <h2 className="text-4xl font-bold mb-10">Spectrum of My Personality</h2>
         <p className="text-lg text-gray-700 max-w-3xl mb-12">
           I'm a passionate software developer specializing in full-stack web development and AI/ML. I love building clean, performant applications that solve real-world problems. But that's just one dimension — fitness grounds my discipline, and spirituality anchors my presence.
