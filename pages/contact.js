@@ -5,14 +5,14 @@ export default function Contact() {
     {
       icon: <Mail className="w-8 h-8 text-accent-blue" />,
       title: "Email",
-      handle: "vishishtakavadiyacric@gmail.com",
-      href: "mailto:ishishtakavadiyacric@gmail.com"
+      handle: "vishishta.kavadiya@example.com",
+      href: "mailto:vishishta.kavadiya@example.com"
     },
     {
       icon: <Linkedin className="w-8 h-8 text-accent-blue" />,
       title: "LinkedIn",
       handle: "in/vishishta-kavadiya",
-      href: "https://www.linkedin.com/in/vishishta-kavadiya-539b20267/"
+      href: "https://linkedin.com/in/yourprofile"
     },
     {
       icon: <Github className="w-8 h-8 text-accent-blue" />,
@@ -23,12 +23,12 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen p-8 bg-primary-dark py-20">
+    <div className="min-h-screen p-4 sm:p-8 bg-primary-dark py-20">
       <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-4 text-primary-text">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-primary-text">
           Get In <span className="text-accent-blue">Touch</span>
         </h1>
-        <p className="text-secondary-text mb-12">
+        <p className="text-secondary-text mb-12 max-w-2xl mx-auto">
           I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
         </p>
 
@@ -43,7 +43,7 @@ export default function Contact() {
             >
               {link.icon}
               <h3 className="text-xl font-semibold text-primary-text">{link.title}</h3>
-              <p className="text-secondary-text">{link.handle}</p>
+              <p className="text-secondary-text break-all">{link.handle}</p>
             </a>
           ))}
         </div>

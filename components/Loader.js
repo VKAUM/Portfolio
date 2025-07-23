@@ -5,23 +5,32 @@ export default function Loader() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     
-    // Set canvas to full screen
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    let animationFrameId;
 
     // Characters that will be falling
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;':,./<>?";
     const charArray = chars.split('');
     const fontSize = 14;
-    const columns = canvas.width / fontSize;
+    
+    let columns;
+    let drops;
 
-    // An array of drops - one for each column
-    const drops = [];
-    for (let x = 0; x < columns; x++) {
-      drops[x] = 1;
+    const setupAndResize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        columns = canvas.width / fontSize;
+        drops = [];
+        for (let x = 0; x < columns; x++) {
+          drops[x] = 1;
+        }
     }
+    
+    window.addEventListener('resize', setupAndResize);
+    setupAndResize();
+
 
     // Drawing the characters
     function draw() {
@@ -48,18 +57,22 @@ export default function Loader() {
         // Incrementing Y coordinate
         drops[i]++;
       }
+      animationFrameId = window.requestAnimationFrame(draw);
     }
 
-    const interval = setInterval(draw, 33);
+    draw();
 
     // Cleanup on unmount
-    return () => clearInterval(interval);
+    return () => {
+        window.cancelAnimationFrame(animationFrameId);
+        window.removeEventListener('resize', setupAndResize);
+    }
   }, []);
 
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-[#0D1117] z-[100] flex items-center justify-center">
       <canvas ref={canvasRef}></canvas>
-      <h1 className="absolute text-white text-2xl font-mono animate-pulse">
+      <h1 className="absolute text-xl sm:text-2xl font-mono animate-pulse text-center px-4">
         Initializing Portfolio...
       </h1>
     </div>
