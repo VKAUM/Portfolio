@@ -4,9 +4,9 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 bg-primary-dark">
       <motion.h1
-        className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-accent-purple"
+        className="text-4xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-accent-purple"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -14,7 +14,7 @@ export default function HeroSection() {
         Hi, I'm Vishishta Kavadiya
       </motion.h1>
       <motion.p 
-        className="mt-6 text-lg text-secondary-text max-w-2xl"
+        className="mt-6 text-md sm:text-lg text-secondary-text max-w-2xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}

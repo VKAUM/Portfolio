@@ -1,23 +1,53 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 export default function Contact() {
+  const contactLinks = [
+    {
+      icon: <Mail className="w-8 h-8 text-accent-blue" />,
+      title: "Email",
+      handle: "vishishtakavadiyacric@gmail.com",
+      href: "mailto:ishishtakavadiyacric@gmail.com"
+    },
+    {
+      icon: <Linkedin className="w-8 h-8 text-accent-blue" />,
+      title: "LinkedIn",
+      handle: "in/vishishta-kavadiya",
+      href: "https://www.linkedin.com/in/vishishta-kavadiya-539b20267/"
+    },
+    {
+      icon: <Github className="w-8 h-8 text-accent-blue" />,
+      title: "GitHub",
+      handle: "VKAUM",
+      href: "https://github.com/VKAUM"
+    }
+  ];
+
   return (
-    <>
-      <main className="min-h-screen pt-20">
-        <div className="max-w-7xl mx-auto px-8 py-4">
-          <h1 className="text-4xl font-bold mb-4">Contact</h1>
-          <p className="text-lg text-gray-700">
-            Let's get in touch! You can reach me at:
-          </p>
-          <p className="text-lg mt-2">
-            📧 <a href="mailto:vishishta@example.com" className="text-blue-600 underline">vishishta@example.com</a>
-          </p>
-          <p className="text-lg">
-            🔗 <a href="https://linkedin.com/in/yourprofile" target="_blank" className="text-blue-600 underline">LinkedIn</a>
-          </p>
+    <div className="min-h-screen p-8 bg-primary-dark py-20">
+      <div className="max-w-7xl mx-auto text-center">
+        <h1 className="text-4xl font-bold mb-4 text-primary-text">
+          Get In <span className="text-accent-blue">Touch</span>
+        </h1>
+        <p className="text-secondary-text mb-12">
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {contactLinks.map((link, index) => (
+            <a 
+              key={index} 
+              href={link.href} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-6 bg-secondary-dark/50 border border-secondary-dark rounded-lg flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-accent-blue/50 hover:-translate-y-1"
+            >
+              {link.icon}
+              <h3 className="text-xl font-semibold text-primary-text">{link.title}</h3>
+              <p className="text-secondary-text">{link.handle}</p>
+            </a>
+          ))}
         </div>
-      </main>
-    </>
+      </div>
+    </div>
   );
 }

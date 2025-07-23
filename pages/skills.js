@@ -12,17 +12,23 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Dropdown = ({ title, icon: Icon, children, defaultOpen = false }) => {
+const Dropdown = ({ title, icon: Icon, children, defaultOpen = false, isNested = false }) => {
   const [open, setOpen] = useState(defaultOpen);
 
+  const buttonClasses = isNested 
+    ? "text-lg px-4 py-2 hover:bg-secondary-dark/70" 
+    : "text-xl px-4 py-3 hover:bg-secondary-dark/70";
+  
+  const titleClasses = isNested ? "gap-2" : "gap-3";
+
   return (
-    <div className="mb-4 border border-secondary-dark rounded-lg bg-secondary-dark/30 transition-all">
+    <div className={`mb-2 ${isNested ? 'border-none' : 'border border-secondary-dark rounded-lg bg-secondary-dark/30'}`}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between text-left text-xl font-medium px-4 py-3 hover:bg-secondary-dark/70 transition-colors cursor-pointer"
+        className={`w-full flex items-center justify-between text-left font-medium transition-colors cursor-pointer ${buttonClasses}`}
       >
-        <div className="flex items-center gap-3 text-primary-text">
-          {Icon && <Icon className="w-5 h-5 text-accent-blue" />}
+        <div className={`flex items-center text-primary-text ${titleClasses}`}>
+          {Icon && <Icon className={`w-5 h-5 ${isNested ? 'text-secondary-text' : 'text-accent-blue'}`} />}
           {title}
         </div>
         <motion.div animate={{ rotate: open ? 180 : 0 }}>
@@ -38,7 +44,7 @@ const Dropdown = ({ title, icon: Icon, children, defaultOpen = false }) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="p-4 border-t border-secondary-dark">
+            <div className={`p-4 ${isNested ? 'pl-10' : 'border-t border-secondary-dark'}`}>
               {children}
             </div>
           </motion.div>
@@ -56,39 +62,32 @@ export default function Skills() {
           My <span className="text-accent-blue">Profile</span>
         </h1>
 
-        <Dropdown title="Skills" icon={Code2} defaultOpen={true}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-secondary-text">
-                <div className="p-4 rounded-lg bg-secondary-dark/50">
-                    <h4 className="font-bold text-primary-text mb-2 flex items-center gap-2"><Code2 size={18}/> Web Development</h4>
-                    <div className="flex flex-wrap gap-2">
-                        {["Next.js", "React", "HTML", "CSS", "JavaScript", "Tailwind CSS"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
-                    </div>
-                </div>
-                <div className="p-4 rounded-lg bg-secondary-dark/50">
-                    <h4 className="font-bold text-primary-text mb-2 flex items-center gap-2"><ServerCog size={18}/> Cloud & DevOps</h4>
-                    <div className="flex flex-wrap gap-2">
-                        {["AWS", "Docker", "Kubernetes", "NGC", "Ansible"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
-                    </div>
-                </div>
-                <div className="p-4 rounded-lg bg-secondary-dark/50">
-                    <h4 className="font-bold text-primary-text mb-2 flex items-center gap-2"><BrainCircuit size={18}/> Machine Learning & AI</h4>
-                    <div className="flex flex-wrap gap-2">
-                        {["Python", "Scikit-learn", "LSTM", "TensorFlow", "OpenCV"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
-                    </div>
-                </div>
-                <div className="p-4 rounded-lg bg-secondary-dark/50">
-                    <h4 className="font-bold text-primary-text mb-2 flex items-center gap-2"><Database size={18}/> Databases</h4>
-                    <div className="flex flex-wrap gap-2">
-                        {["PostgreSQL", "MySQL", "MongoDB"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
-                    </div>
-                </div>
-                 <div className="p-4 rounded-lg bg-secondary-dark/50 md:col-span-2">
-                    <h4 className="font-bold text-primary-text mb-2 flex items-center gap-2"><Languages size={18}/> Programming Languages</h4>
-                    <div className="flex flex-wrap gap-2">
-                        {["Python", "C++", "Java", "SQL", "Kotlin"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
-                    </div>
-                </div>
-            </div>
+        <Dropdown title="Skills" icon={Code2}>
+            <Dropdown title="Web Development" icon={Code2} isNested={true}>
+              <div className="flex flex-wrap gap-2">
+                {["Next.js", "React", "HTML", "CSS", "JavaScript", "Tailwind CSS"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
+              </div>
+            </Dropdown>
+            <Dropdown title="Cloud & DevOps" icon={ServerCog} isNested={true}>
+              <div className="flex flex-wrap gap-2">
+                {["AWS", "Docker", "Kubernetes", "NGC", "Ansible"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
+              </div>
+            </Dropdown>
+            <Dropdown title="Machine Learning & AI" icon={BrainCircuit} isNested={true}>
+              <div className="flex flex-wrap gap-2">
+                {["Python", "Scikit-learn", "LSTM", "TensorFlow", "OpenCV"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
+              </div>
+            </Dropdown>
+            <Dropdown title="Databases" icon={Database} isNested={true}>
+              <div className="flex flex-wrap gap-2">
+                {["PostgreSQL", "MySQL", "MongoDB"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
+              </div>
+            </Dropdown>
+            <Dropdown title="Programming Languages" icon={Languages} isNested={true}>
+              <div className="flex flex-wrap gap-2">
+                {["Python", "C++", "Java", "SQL", "Kotlin"].map(s => <span key={s} className="bg-primary-dark text-xs text-accent-blue px-2 py-1 rounded-full border border-accent-blue/30">{s}</span>)}
+              </div>
+            </Dropdown>
         </Dropdown>
 
         <Dropdown title="Certifications" icon={Award}>

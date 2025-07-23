@@ -18,6 +18,15 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['monospace'],
+      },
+      animation: {
+        'gradient-animation': 'gradient-animation 8s ease infinite',
+      },
+      keyframes: {
+        'gradient-animation': {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        }
       }
     },
   },

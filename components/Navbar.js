@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full bg-primary-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-secondary-dark">
+    <nav className="w-full bg-primary-dark/80 backdrop-blur-sm sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 className="text-xl font-bold text-primary-text">
           <Link href="/" className="hover:text-accent-blue transition-colors">Vishishta</Link>
@@ -51,6 +51,8 @@ export default function Navbar() {
           ))}
         </div>
       )}
+      {/* Animated Gradient Line */}
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent-blue via-accent-indigo to-accent-purple bg-[length:400%_400%] animate-gradient-animation"></div>
     </nav>
   );
 }

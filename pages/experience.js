@@ -27,17 +27,17 @@ export default function Experience() {
   ];
 
   return (
-    <div className="min-h-screen p-8 bg-primary-dark py-20">
+    <div className="min-h-screen px-4 sm:px-8 bg-primary-dark py-20">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-12 text-center text-primary-text">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-primary-text">
           Professional <span className="text-accent-blue">Experience</span>
         </h1>
 
-        <div className="relative border-l-2 border-secondary-dark pl-10">
+        <div className="relative border-l-2 border-secondary-dark ml-3 sm:ml-0 pl-6 sm:pl-10">
           {experiences.map((exp, index) => (
             <div key={index} className="mb-12 relative">
-              <div className="absolute -left-[49px] top-1 w-6 h-6 bg-accent-blue rounded-full border-4 border-primary-dark"></div>
-              <h2 className="text-2xl font-semibold text-primary-text">{exp.company}</h2>
+              <div className="absolute -left-[33px] sm:-left-[49px] top-1 w-6 h-6 bg-accent-blue rounded-full border-4 border-primary-dark"></div>
+              <h2 className="text-xl sm:text-2xl font-semibold text-primary-text">{exp.company}</h2>
               <p className="text-secondary-text italic mb-2">
                 {exp.role} — {exp.date}
               </p>

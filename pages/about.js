@@ -25,16 +25,16 @@ export default function About() {
       <Head>
         <title>About | Vishishta</title>
       </Head>
-      <main className="min-h-screen px-8 py-20 bg-primary-dark">
+      <div className="min-h-screen px-4 sm:px-8 py-20 bg-primary-dark">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-center">Spectrum of My <span className="text-accent-blue">Personality</span></h2>
-          <p className="text-lg text-secondary-text max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center text-primary-text">Spectrum of My <span className="text-accent-blue">Personality</span></h2>
+          <p className="text-md sm:text-lg text-secondary-text max-w-3xl mx-auto text-center mb-12">
             I'm a passionate software developer specializing in full-stack web development and AI/ML. I love building clean, performant applications that solve real-world problems. But that's just one dimension — fitness grounds my discipline, and spirituality anchors my presence.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {cardInfo.map((card, index) => (
-              <div key={index} className="relative p-6 border border-secondary-dark rounded-xl bg-secondary-dark/50 group overflow-hidden">
+              <div key={index} className="relative p-6 border border-secondary-dark rounded-xl bg-secondary-dark/50 group overflow-hidden transition-all duration-300 hover:border-accent-blue/50 hover:-translate-y-1">
                  <div className="absolute inset-0 bg-gradient-to-r from-accent-blue/5 to-accent-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
                   {card.icon}
@@ -47,7 +47,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }
