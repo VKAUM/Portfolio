@@ -7,26 +7,34 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const navLinks = [
+    { href: "/#about", label: "About" },
+    { href: "/#experience", label: "Experience" },
+    { href: "/#skills", label: "Skills" },
+    { href: "/#projects", label: "Projects" },
+    { href: "/#resume", label: "Resume" },
+    { href: "/#contact", label: "Contact" },
+  ];
+
   return (
-    <nav className="w-full bg-white shadow-md sticky top-0 z-50">
+    <nav className="w-full bg-primary-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-secondary-dark">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">
-          <Link href="/" className="hover:underline">Home</Link>
+        <h1 className="text-xl font-bold text-primary-text">
+          <Link href="/" className="hover:text-accent-blue transition-colors">Vishishta</Link>
         </h1>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <Link href="/#about" className="hover:underline">About</Link>
-          <Link href="/#experience" className="hover:underline">Experience</Link>
-          <Link href="/#skills" className="hover:underline">Skills</Link>
-          <Link href="/#projects" className="hover:underline">Projects</Link>
-          <Link href="/#resume" className="hover:underline">Resume</Link>
-          <Link href="/#contact" className="hover:underline">Contact</Link>
+        <div className="hidden md:flex items-center space-x-6 text-secondary-text font-medium">
+          {navLinks.map(link => (
+            <Link key={link.href} href={link.href} className="hover:text-accent-blue transition-colors duration-300">
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         {/* Hamburger Menu Button */}
         <button
-          className="md:hidden text-gray-700"
+          className="md:hidden text-primary-text"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -35,13 +43,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden px-6 pb-4 flex flex-col space-y-3 bg-white text-gray-700 font-medium">
-          <Link href="/#about" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link href="/#experience" onClick={() => setMenuOpen(false)}>Experience</Link>
-          <Link href="/#skills" onClick={() => setMenuOpen(false)}>Skills</Link>
-          <Link href="/#projects" onClick={() => setMenuOpen(false)}>Projects</Link>
-          <Link href="/#resume" onClick={() => setMenuOpen(false)}>Resume</Link>
-          <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <div className="md:hidden px-6 pb-4 flex flex-col space-y-4 bg-primary-dark text-secondary-text font-medium">
+          {navLinks.map(link => (
+             <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="hover:text-accent-blue transition-colors duration-300">
+              {link.label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>

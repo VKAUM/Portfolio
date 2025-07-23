@@ -19,71 +19,73 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | Vishishta</title>
+        <title>Vishishta Kavadiya | Software Developer</title>
+        <meta name="description" content="Portfolio of Vishishta Kavadiya, a full-stack developer specializing in AI/ML." />
       </Head>
       <Navbar />
-      <HeroSection />
+      <main>
+        <HeroSection />
 
-      <motion.section
-        id="about"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <About />
-      </motion.section>
+        <motion.section
+          id="about"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <About />
+        </motion.section>
 
-      <motion.section
-        id="experience"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <Experience />
-      </motion.section>
+        <motion.section
+          id="experience"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <Experience />
+        </motion.section>
 
-      <motion.section
-        id="skills"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <Skills />
-      </motion.section>
+        <motion.section
+          id="skills"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <Skills />
+        </motion.section>
 
-      <motion.section
-        id="projects"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <Projects />
-      </motion.section>
+        <motion.section
+          id="projects"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <Projects />
+        </motion.section>
 
-      <motion.section
-        id="resume"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <Resume />
-      </motion.section>
+        <motion.section
+          id="resume"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <Resume />
+        </motion.section>
 
-      <motion.section
-        id="contact"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <Contact />
-      </motion.section>
-
+        <motion.section
+          id="contact"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <Contact />
+        </motion.section>
+      </main>
       <Footer />
     </>
   );

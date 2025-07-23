@@ -4,4 +4,67 @@
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: #0D1117;
+  /* Primary Dark Background */
+  color: #E6EDF3;
+  /* Primary Light Text */
+  scroll-behavior: smooth;
+}
+
+/* For the glowing, animated navbar border */
+.animated-gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1, #a855f7, #38bdf8);
+  background-size: 400% 400%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: gradient-animation 8s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom scrollbar for a more modern look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161B22;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38BDF8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Add padding to anchor links to account for sticky navbar */
+section[id] {
+  scroll-margin-top: 80px;
 }
