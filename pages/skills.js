@@ -59,7 +59,7 @@ export default function Skills() {
     <div className="min-h-screen p-8 bg-primary-dark py-20">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-12 text-center text-primary-text">
-          My <span className="text-accent-blue">Profile</span>
+          My <span className="text-accent-blue">SkillSet</span>
         </h1>
 
         <Dropdown title="Skills" icon={Code2}>
