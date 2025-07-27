@@ -25,7 +25,7 @@ export default function Resume() {
         {/* PDF Viewer - Hidden on small screens */}
         <div className="hidden md:block w-full max-w-4xl mx-auto h-[120vh] border-2 border-secondary-dark rounded-lg overflow-hidden bg-white">
           <iframe
-            src="/Vishishta_Resume.pdf"
+            src="/Update Resume.pdf"
             className="w-full h-full"
             title="Vishishta Kavadiya's Resume"
           >
